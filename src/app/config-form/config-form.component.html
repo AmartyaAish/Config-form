@@ -1,7 +1,141 @@
 <div class="form-container">
   <h3 class="form-title text-center">Enter Camera Configurations</h3>
-  <form #configForm="ngForm" (ngSubmit)="onSubmit(configForm)">
-    <!-- <div class="form-group">
+  <!-- <form #configForm="ngForm" (ngSubmit)="onSubmit(configForm)">
+    <label for="">Polygon</label>
+    <input
+      type="text"
+      name="polygon"
+      id=""
+      [ngModel]="config.polygon"
+      placeholder="Enter polygon coordinates"
+    />
+    <br />
+    <label for="">
+      Entry angle
+    </label>
+    <input
+      type="number"
+      [ngModel]="config.entry"
+      placeholder="Enter entry minRssi"
+      name="entry"
+    />
+    <input
+      type="number"
+      [ngModel]="config.entry"
+      placeholder="Enter entry maxRssi"
+      name="entry"
+    />
+    <button class="btn btn-primary btn-sm">Add more entry angle</button>
+    <br />
+    <label for="">
+      Exit angle
+    </label>
+    <input
+      type="number"
+      name="exit"
+      id=""
+      [ngModel]="config.exit"
+      placeholder="Enter exit minRssi"
+    />
+    <input
+      type="number"
+      name="exit"
+      id=""
+      [ngModel]="config.exit"
+      placeholder="Enter exit minRssi"
+    />
+    <button class="btn btn-primary btn-sm">Add more exit angle</button>
+    <br />
+    <button class="btn btn-primary btn-sm">Add Polygon</button>
+    <button type="submit" class="btn btn-warning btn-sm">
+      Submit Polygon Details
+    </button>
+  </form> -->
+
+  <div>
+    <form [formGroup]="polygonForm">
+      <div
+        formArrayName="polygonModel"
+        *ngFor="let group of polygonModel.controls; let i = index"
+      >
+        <div [formGroupName]="i">
+          <input
+            type="number"
+            name=""
+            id=""
+            formControlName="polygon"
+            placeholder="Polygon Coords"
+          />
+
+          <div
+            formArrayName="entryAngle"
+            *ngFor="
+              let angle of group.get('entryAngle')?.controls;
+              let j = index
+            "
+          >
+            <div [formGroupName]="j">
+              <input
+                type="number"
+                name=""
+                id=""
+                formControlName="maxRssi"
+                placeholder="maxRssi"
+              />
+              <input
+                type="number"
+                name=""
+                id=""
+                formControlName="minRssi"
+                placeholder="minRssi"
+              />
+            </div>
+          </div>
+
+          <button (click)="addEntryAngle(i)">
+            Add Entry Angle
+          </button>
+          <div
+            formArrayName="exitAngle"
+            *ngFor="
+              let angle of group.get('exitAngle')?.controls;
+              let k = index
+            "
+          >
+            <div [formGroupName]="k">
+              <input
+                type="number"
+                name=""
+                id=""
+                formControlName="maxRssi"
+                placeholder="maxRssi"
+              />
+              <input
+                type="number"
+                name=""
+                id=""
+                formControlName="minRssi"
+                placeholder="minRssi"
+              />
+            </div>
+          </div>
+
+          <button (click)="addExitAngle(i)">
+            Add Exit Angle
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <button (click)="addNewPolygonModel()" class="btn btn-primary">
+      Add New Polygon
+    </button>
+
+    <button (click)="onSubmit()">Submit</button>
+  </div>
+</div>
+
+<!-- <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input
         type="email"
@@ -11,7 +145,7 @@
         placeholder="Enter email"
       />
     </div> -->
-    <!-- <div class="form-row ">
+<!-- <div class="form-row ">
       <button class="btn btn-success">Add Entry</button>
     </div>
     <div class="form-group">
@@ -57,54 +191,3 @@
       <button class="btn btn-info btn-sm">Add More Angle</button>
       <button class="btn btn-danger btn-sm">Delete This Angle</button>
     </div> -->
-    <label for="">Polygon</label>
-    <input
-      type="text"
-      name="polygon"
-      id=""
-      [ngModel]="config.polygon"
-      placeholder="Enter polygon coordinates"
-    />
-    <br />
-    <label for="">
-      Entry angle
-    </label>
-    <input
-      type="number"
-      [ngModel]="config.entry"
-      placeholder="Enter entry minRssi"
-      name="entry"
-    />
-    <input
-      type="number"
-      [ngModel]="config.entry"
-      placeholder="Enter entry maxRssi"
-      name="entry"
-    />
-    <button class="btn btn-primary btn-sm">Add more entry angle</button>
-    <br />
-    <label for="">
-      Exit angle
-    </label>
-    <input
-      type="number"
-      name="exit"
-      id=""
-      [ngModel]="config.exit"
-      placeholder="Enter exit minRssi"
-    />
-    <input
-      type="number"
-      name="exit"
-      id=""
-      [ngModel]="config.exit"
-      placeholder="Enter exit minRssi"
-    />
-    <button class="btn btn-primary btn-sm">Add more entry angle</button>
-    <br />
-    <button class="btn btn-primary btn-sm">Add Polygon</button>
-    <button type="submit" class="btn btn-warning btn-sm">
-      Submit Polygon Details
-    </button>
-  </form>
-</div>
