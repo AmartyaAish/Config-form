@@ -3,21 +3,21 @@ import { FormArray, FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { CamConfig } from 'src/shared/shared/cam-config.model';
 
 
-interface PolygonDetails{
-  polygonCoordinates: string,
-  entry: [
-    {
-      minRssi: number,
-      maxRssi: number
-    }
-  ],
-  exit: [
-    {
-      minRssi: number,
-      maxRssi: number
-    }
-  ]
-}
+// interface PolygonDetails{
+//   polygonCoordinates: string,
+//   entry: [
+//     {
+//       minRssi: number,
+//       maxRssi: number
+//     }
+//   ],
+//   exit: [
+//     {
+//       minRssi: number,
+//       maxRssi: number
+//     }
+//   ]
+// }
 
 
 @Component({
@@ -35,8 +35,8 @@ export class ConfigFormComponent implements OnInit {
 
   polygonForm: FormGroup ;
   polygonModel: FormArray ;
-  cameraconfig: PolygonDetails[] = new Array<PolygonDetails>();
-  @Input() config: CamConfig = new CamConfig('', null, null);
+  // cameraconfig: PolygonDetails[] = new Array<PolygonDetails>();
+  // @Input() config: CamConfig = new CamConfig('', null, null);
   constructor(private fb: FormBuilder) {
     
   }
