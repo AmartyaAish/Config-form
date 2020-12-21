@@ -66,7 +66,21 @@
             formControlName="polygon"
             placeholder="Polygon Coords"
           />
-
+          <br />
+          <input
+            type="number"
+            name=""
+            id=""
+            formControlName="radiusToInterpolate"
+            placeholder="Interpolation Radius"
+          />
+          <input
+            type="number"
+            name=""
+            id=""
+            formControlName="minVectorMagnitude"
+            placeholder="Min. Vector Magni"
+          />
           <div
             formArrayName="entryAngle"
             *ngFor="
@@ -79,15 +93,15 @@
                 type="number"
                 name=""
                 id=""
-                formControlName="maxRssi"
-                placeholder="maxRssi"
+                formControlName="minRssi"
+                placeholder="minRssi"
               />
               <input
                 type="number"
                 name=""
                 id=""
-                formControlName="minRssi"
-                placeholder="minRssi"
+                formControlName="maxRssi"
+                placeholder="maxRssi"
               />
             </div>
           </div>
@@ -107,15 +121,15 @@
                 type="number"
                 name=""
                 id=""
-                formControlName="maxRssi"
-                placeholder="maxRssi"
+                formControlName="minRssi"
+                placeholder="minRssi"
               />
               <input
                 type="number"
                 name=""
                 id=""
-                formControlName="minRssi"
-                placeholder="minRssi"
+                formControlName="maxRssi"
+                placeholder="maxRssi"
               />
             </div>
           </div>

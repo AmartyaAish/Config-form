@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, NgForm } from '@angular/forms';
-import { CamConfig } from 'src/shared/shared/cam-config.model';
+// import { CamConfig } from 'src/shared/shared/cam-config.model';
 
 
 // interface PolygonDetails{
@@ -64,7 +64,9 @@ export class ConfigFormComponent implements OnInit {
     return this.fb.group({
       polygon: [null],
       entryAngle: this.fb.array([this.createNewAngle()]),
-      exitAngle: this.fb.array([this.createNewAngle()])
+      exitAngle: this.fb.array([this.createNewAngle()]),
+      radiusToInterpolate: [null],
+      minVectorMagnitude: [null]
     })
   }
 
@@ -94,6 +96,8 @@ export class ConfigFormComponent implements OnInit {
 
   onSubmit(){
     console.log(this.polygonForm.value);
+    // console.log(typeof(this.polygonForm.value));
+    // console.log(this.polygonForm.value.polygonModel[0].polygon);
   }
 
   // createNewExitAngle(){}
