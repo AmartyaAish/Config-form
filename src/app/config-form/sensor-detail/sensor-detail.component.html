@@ -1,100 +1,16 @@
-<p>sensor-detail works!</p>
-<!-- <div class="form-container">
-  <h3 class="form-title text-center">Enter Camera Configurations</h3>
-
+<!-- <p>sensor-detail works!</p> -->
+<div class="form-container">
   <div>
-    <form [formGroup]="polygonForm">
-      <div
-        formArrayName="polygonModel"
-        *ngFor="let group of polygonModel.controls; let i = index"
-      >
-        <div [formGroupName]="i">
-          <input
-            type="text"
-            name=""
-            id=""
-            formControlName="polygon"
-            placeholder="Polygon Coords"
-          />
-          <br />
-          <input
-            type="number"
-            name=""
-            id=""
-            formControlName="radiusToInterpolate"
-            placeholder="Interpolation Radius"
-          />
-          <input
-            type="number"
-            name=""
-            id=""
-            formControlName="minVectorMagnitude"
-            placeholder="Min. Vector Magni"
-          />
-          <div
-            formArrayName="entryAngle"
-            *ngFor="
-              let angle of group.get('entryAngle')?.controls;
-              let j = index
-            "
-          >
-            <div [formGroupName]="j">
-              <input
-                type="number"
-                name=""
-                id=""
-                formControlName="minRssi"
-                placeholder="minRssi"
-              />
-              <input
-                type="number"
-                name=""
-                id=""
-                formControlName="maxRssi"
-                placeholder="maxRssi"
-              />
-            </div>
-          </div>
-
-          <button (click)="addEntryAngle(i)">
-            Add Entry Angle
-          </button>
-          <div
-            formArrayName="exitAngle"
-            *ngFor="
-              let angle of group.get('exitAngle')?.controls;
-              let k = index
-            "
-          >
-            <div [formGroupName]="k">
-              <input
-                type="number"
-                name=""
-                id=""
-                formControlName="minRssi"
-                placeholder="minRssi"
-              />
-              <input
-                type="number"
-                name=""
-                id=""
-                formControlName="maxRssi"
-                placeholder="maxRssi"
-              />
-            </div>
-          </div>
-
-          <button (click)="addExitAngle(i)">
-            Add Exit Angle
-          </button>
-        </div>
-      </div>
+    <form [formGroup]="sensorForm">
+      <input
+        type="text"
+        placeholder="Enter Sensor Id"
+        formControlName="sensor_id"
+      />
+      <input type="field_1" placeholder="Field 1" formControlName="field_1" />
+      <input type="text" placeholder="Field 2" formControlName="field_2" />
     </form>
-
-    <button (click)="addNewPolygonModel()" class="btn btn-primary">
-      Add New Polygon
-    </button>
 
     <button (click)="onSubmit()">Submit</button>
   </div>
-</div> -->
+</div>
