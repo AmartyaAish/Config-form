@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 // import { CamConfig } from 'src/shared/shared/cam-config.model';
 
 // interface PolygonDetails{
