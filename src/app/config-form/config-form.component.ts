@@ -95,8 +95,9 @@ export class ConfigFormComponent implements OnInit {
 
     let str = JSON.stringify(this.polygonForm.value);
     let str2 = JSON.parse(str);
+
     console.log(str);
-    console.log(str2);
+    console.log(str2.polygonModel);
 
     // console.log(typeof(this.polygonForm.value));
     // console.log(this.polygonForm.value.polygonModel[0].polygon);
