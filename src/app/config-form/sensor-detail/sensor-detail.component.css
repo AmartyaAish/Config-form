@@ -1,0 +1,15 @@
+.form-container {
+  min-height: 200px;
+  min-width: 400px;
+  width: 40%;
+  margin: 5% auto;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 10px 10px 30px 5px lightgrey;
+}
+
+.heading {
+  width: 90%;
+  margin: 0 auto;
+}

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 // import { CamConfig } from 'src/shared/shared/cam-config.model';
 
 // interface PolygonDetails{
@@ -46,6 +46,9 @@ export class ConfigFormComponent implements OnInit {
 
   initForm() {
     this.polygonForm = this.fb.group({
+      sensor_id: new FormControl(''),
+      field_1: new FormControl(''),
+      field_2: new FormControl(''),
       polygonModel: this.fb.array([this.createNewPolygonModel()])
     });
 
@@ -98,6 +101,19 @@ export class ConfigFormComponent implements OnInit {
 
     console.log(str);
     console.log(str2.polygonModel);
+    var element = document.createElement('a');
+    element.setAttribute(
+      'href',
+      'data:text/plain;charset=utf-8,' + encodeURIComponent(str)
+    );
+    element.setAttribute('download', 'config.json');
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
 
     // console.log(typeof(this.polygonForm.value));
     // console.log(this.polygonForm.value.polygonModel[0].polygon);

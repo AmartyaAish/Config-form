@@ -2,13 +2,19 @@
 <div class="form-container">
   <div>
     <form [formGroup]="sensorForm">
-      <input
-        type="text"
-        placeholder="Enter Sensor Id"
-        formControlName="sensor_id"
-      />
-      <input type="field_1" placeholder="Field 1" formControlName="field_1" />
-      <input type="text" placeholder="Field 2" formControlName="field_2" />
+      <div class="heading">
+        <h3>Enter sensor details</h3>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Enter Sensor Id"
+          formControlName="sensor_id"
+        />
+        <input type="field_1" placeholder="Field 1" formControlName="field_1" />
+        <input type="text" placeholder="Field 2" formControlName="field_2" />
+      </div>
     </form>
 
     <button (click)="onSubmit()">Submit</button>

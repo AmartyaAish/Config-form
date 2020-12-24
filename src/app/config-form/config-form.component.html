@@ -1,9 +1,15 @@
-<app-sensor-detail></app-sensor-detail>
 <div class="form-container">
   <h3 class="form-title text-center">Enter Camera Configurations</h3>
 
   <div>
     <form [formGroup]="polygonForm">
+      <input
+        type="text"
+        placeholder="Enter Sensor Id"
+        formControlName="sensor_id"
+      />
+      <input type="field_1" placeholder="Field 1" formControlName="field_1" />
+      <input type="text" placeholder="Field 2" formControlName="field_2" />
       <div
         formArrayName="polygonModel"
         *ngFor="let group of polygonModel.controls; let i = index"
