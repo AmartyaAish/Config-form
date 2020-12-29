@@ -92,10 +92,6 @@ export class ConfigFormComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.polygonForm.value);
-    // console.warn(this.polygonForm.value);
-    // this.polygonForm.value
-
     let str = JSON.stringify(this.polygonForm.value);
     let str2 = JSON.parse(str);
 
@@ -115,9 +111,13 @@ export class ConfigFormComponent implements OnInit {
 
     document.body.removeChild(element);
 
-    // console.log(typeof(this.polygonForm.value));
-    // console.log(this.polygonForm.value.polygonModel[0].polygon);
+    // this.http.get<
+    //   // ApiResponse<{
+    //   //   analyst: Partial<DivisionAdmin>;
+    //   //   customerRepresentative: Partial<DivisionAdmin>;
+    //   //   id: number;
+    //   // }
+    //   >
+    // >(`${this.getBaseUrl()}/${seletedDivisionId}/client`);
   }
-
-  // createNewExitAngle(){}
 }
