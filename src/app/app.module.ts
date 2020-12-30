@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfigFormComponent } from './config-form/config-form.component';
 import { SensorDetailComponent } from './config-form/sensor-detail/sensor-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, ConfigFormComponent, SensorDetailComponent],
@@ -15,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

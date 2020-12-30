@@ -3,13 +3,13 @@
 
   <div>
     <form [formGroup]="polygonForm">
-      <input
+      <!-- <input
         type="text"
         placeholder="Enter Sensor Id"
         formControlName="sensor_id"
       />
       <input type="field_1" placeholder="Field 1" formControlName="field_1" />
-      <input type="text" placeholder="Field 2" formControlName="field_2" />
+      <input type="text" placeholder="Field 2" formControlName="field_2" /> -->
       <div
         formArrayName="polygonModel"
         *ngFor="let group of polygonModel.controls; let i = index"
@@ -103,4 +103,6 @@
 
     <button (click)="onSubmit()">Submit</button>
   </div>
+
+  <!-- <p>Response: {{ resp }}</p> -->
 </div>
